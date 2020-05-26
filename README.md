@@ -14,12 +14,13 @@ Takes the following required arguments:
 Example usage:
 
 ```yaml
-uses: uniswap/replace-vercel-dns-record@v1
-with:
-  domain: 'uniswap.org'
-  subdomain: '_dnslink.app'
-  record-type: 'TXT'
-  value: /ipfs/${{ steps.upload.outputs.hash }}
-  token: ${{ secrets.VERCEL_TOKEN }}
-  team-name: 'uniswap'
+- name: Update DNS with new IPFS hash
+  uses: uniswap/replace-vercel-dns-records@v1.0.0
+  with:
+    domain: 'uniswap.org'
+    subdomain: '_dnslink.app'
+    record-type: 'TXT'
+    value: /ipfs/${{ steps.upload.outputs.hash }}
+    token: ${{ secrets.VERCEL_TOKEN }}
+    team-name: 'uniswap'
 ```
