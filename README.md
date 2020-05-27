@@ -20,7 +20,7 @@ Example usage:
     domain: 'uniswap.org'
     subdomain: '_dnslink.app'
     record-type: 'TXT'
-    value: /ipfs/${{ steps.upload.outputs.hash }}
+    value: dnslink=/ipfs/${{ steps.upload.outputs.hash }}
     token: ${{ secrets.VERCEL_TOKEN }}
     team-name: 'uniswap'
 ```
